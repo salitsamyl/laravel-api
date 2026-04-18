@@ -11,6 +11,9 @@ use Illuminate\Http\Request;
 Route::apiResource('users', UserApiController::class);
 Route::apiResource('bukus', BukuApiController::class);
 Route::apiResource('produks', ProdukApiController::class);
+Route::post('/produks/{id}/images', [ProdukApiController::class, 'uploadImages']);
+Route::post('/produks/{id}/images/update', [ProdukApiController::class, 'updateImages']);
+Route::delete('/produks/{id}', [ProdukApiController::class, 'deleteImage']);
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
